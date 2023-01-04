@@ -54,9 +54,7 @@ resource Nic 'Microsoft.Network/networkInterfaces@2020-08-01' = {
     enableAcceleratedNetworking: false
     enableIPForwarding: false
   }
-  dependsOn:[
-    Pip
-  ]
+ 
 }
 
 resource VirtualMachine 'Microsoft.Compute/virtualMachines@2019-07-01' = {
@@ -110,9 +108,7 @@ resource VirtualMachine 'Microsoft.Compute/virtualMachines@2019-07-01' = {
       ]
     }
   }
-  dependsOn:[
-    Nic
-  ]
+
 }
 
 output VirtualMachineId string = VirtualMachine.id
